@@ -1,0 +1,646 @@
+/* ============================================================
+   Bussar Landing Page — Component Styles
+   ============================================================ */
+
+:host {
+  display: block;
+  color: var(--ink);
+}
+
+/* ========================= HEADER ========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  width: min(1200px, 100% - 80px);
+  margin: 0 auto;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* ---- Brand ---- */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+}
+
+.brand-mark svg {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+}
+
+/* ---- Navigation ---- */
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 0;
+  color: #4a4a5a;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 200ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--brand);
+}
+
+.nav-link--active {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.nav-link--active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+  transform: translateX(-50%);
+}
+
+/* ---- Sign Up Button ---- */
+
+.signup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  border: 2px solid var(--brand);
+  border-radius: 8px;
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 150ms ease;
+}
+
+.signup-btn:hover {
+  background: var(--brand);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================= HERO ========================= */
+
+.hero {
+  overflow: visible;
+  padding-bottom: 40px;
+}
+
+.hero-inner {
+  width: min(1200px, 100% - 80px);
+  margin: 0 auto;
+  padding: 60px 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ---- Hero Copy ---- */
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: clamp(2.4rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.hero-line {
+  display: block;
+}
+
+.hero-line--highlight {
+  position: relative;
+}
+
+.highlight-word {
+  position: relative;
+  display: inline;
+}
+
+.highlight-word::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 2px;
+  height: 14px;
+  background: rgba(255, 159, 67, 0.3);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.hero-text {
+  max-width: 400px;
+  margin: 0 0 32px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---- Hero Buttons ---- */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 150ms ease;
+}
+
+.btn--primary {
+  color: var(--white);
+  background: var(--brand);
+  border: 2px solid var(--brand);
+  box-shadow: 0 8px 24px -8px rgba(255, 159, 67, 0.5);
+}
+
+.btn--primary:hover {
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  box-shadow: 0 12px 28px -8px rgba(255, 159, 67, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--outline {
+  color: var(--brand);
+  background: var(--white);
+  border: 2px solid #e5e7eb;
+}
+
+.btn--outline:hover {
+  border-color: var(--brand);
+  background: rgba(255, 159, 67, 0.04);
+  transform: translateY(-2px);
+}
+
+.btn--outline:active {
+  transform: translateY(0);
+}
+
+/* ---- Service Labels ---- */
+
+.hero-services {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.service-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a4a5a;
+}
+
+.service-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 159, 67, 0.12);
+  flex-shrink: 0;
+}
+
+.service-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---- Hero Art ---- */
+
+.hero-art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-art-bg {
+  position: absolute;
+  width: 88%;
+  height: 85%;
+  bottom: 0;
+  right: 0;
+  background: var(--off-white);
+  border-radius: 40% 40% 40% 40%;
+  z-index: 0;
+}
+
+.hero-art img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===================== WHY CHOOSE US ===================== */
+
+.why-choose {
+  padding: 30px 0 0;
+}
+
+.why-inner {
+  width: min(1200px, 100% - 80px);
+  margin: 0 auto;
+}
+
+/* ---- Decorative Dots ---- */
+
+.decorative-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot--filled {
+  background: #c4c4c4;
+}
+
+.dot--outline {
+  border: 2px solid #c4c4c4;
+}
+
+/* ---- Why Header ---- */
+
+.why-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+#why-title {
+  margin: 0;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.why-description {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* ---- Feature Cards Wrapper ---- */
+
+.feature-cards-wrapper {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.feature-cards {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ---- Orange Band ---- */
+
+.cards-band {
+  position: absolute;
+  bottom: 0;
+  left: -50vw;
+  right: -50vw;
+  height: 80px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-yellow) 100%);
+  z-index: 1;
+}
+
+/* ---- Feature Card ---- */
+
+.feature-card {
+  padding: 32px 28px;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  background: var(--white);
+  transition:
+    box-shadow 250ms ease,
+    transform 250ms ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.feature-card--purple {
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* ---- Card Icons ---- */
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card-icon--blue {
+  background: #e0f2fe;
+  color: #0ea5e9;
+}
+
+.card-icon--purple {
+  background: #ede9fe;
+  color: #8b5cf6;
+}
+
+.card-icon--coral {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* ---- Card Text ---- */
+
+.feature-card h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ======================== RESPONSIVE ======================== */
+
+@media (max-width: 1100px) {
+  .header-inner,
+  .hero-inner,
+  .why-inner {
+    width: min(1200px, 100% - 48px);
+  }
+
+  .nav-list {
+    gap: 24px;
+  }
+
+  .hero-inner {
+    gap: 30px;
+    padding-top: 40px;
+  }
+
+  .why-header {
+    gap: 40px;
+  }
+
+  .feature-cards {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    width: min(680px, 100% - 48px);
+    gap: 20px;
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-services {
+    justify-content: center;
+  }
+
+  .hero-art {
+    width: min(420px, 100%);
+    margin: 0 auto;
+  }
+
+  .why-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .why-description {
+    max-width: 100%;
+  }
+
+  .feature-cards {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    width: 100%;
+    min-height: 0;
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .signup-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .nav-list {
+    gap: 18px;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .hero-inner {
+    width: 100%;
+    padding: 28px 20px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 8.5vw, 2.6rem);
+    letter-spacing: -1px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .why-inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .decorative-dots {
+    align-items: center;
+  }
+
+  .feature-cards-wrapper {
+    padding-bottom: 40px;
+  }
+
+  .cards-band {
+    height: 50px;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav-list {
+    gap: 14px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .hero-services {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .nav-link,
+  .signup-btn,
+  .feature-card {
+    transition: none;
+  }
+}
