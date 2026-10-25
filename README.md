@@ -63,19 +63,3 @@ src/
 
 Angular 21 serves files from `public/` at the application root, so the hero image is referenced as `images/hero-character.jpg`.
 
-## Design notes
-
-- **Color palette:** Primary orange (#FF9F43), secondary yellow (#FFC45E), near-black text, medium gray body text, white backgrounds, and subtle blue/purple/coral icon accents.
-- **Header:** Sticky white header with the Bussar logo, navigation links (Home, Course, Pricing, About Us), and an outlined orange "Sign Up" button. The active Home link has an orange dot indicator.
-- **Hero section:** Two-column layout with a bold headline ("Digital Services With Excellent Quality"), an orange highlight accent on "Excellent", two CTA buttons (Get Started, Try Free), and service labels with circular orange icons.
-- **Hero illustration:** A 3D character sitting on cloud shapes, placed inside a soft off-white background shape.
-- **Why Choose Us:** Two-column intro (heading + description) followed by three feature cards (Transparent Process, Fast & Efficient Delivery, Innovative Thinking) with colored icon badges.
-- **Orange band:** A wide yellow-orange gradient band sits behind the bottom portion of the feature cards.
-- **Responsive breakpoints:**
-  - Desktop: two-column hero, three feature cards in one row.
-  - Tablet (≤ 900px): stacked, centered hero and single-column cards.
-  - Mobile (≤ 640px): compact header, stacked hero, single-column cards.
-- Visible keyboard focus, meaningful image alt text and reduced-motion support are included.
-- Colors are defined in `src/styles.css`; page layout and breakpoints live in `src/app/app.css`.
-
-There is no application state, data fetching or navigation beyond in-page section anchors.
